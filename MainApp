@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+void countSquares(int arr[], int N)
+{
+    int count = 0;
+
+    for (int i = 0; i < N; i++) {
+
+        int square = arr[i] * arr[i];
+
+        for (int j = 0; j < N; j++) {
+
+            if (arr[j] == square) {
+
+                count = count + 1;
+            }
+        }
+    }
+
+    cout << count;
+}
+
+int main()
+{
+    int arr[200];
+
+    int n, i;
+
+    cout << "Dati numarul de elemente: ";
+    cin >> n;
+
+    for (i = 0; i < n; i++) {
+        arr[i] = rand() % 50;
+    }
+
+    for (i = 0; i < n; i++) {
+        cout << "Elementele sunt: " << arr[i]<<endl;
+    }
+
+    countSquares(arr, n);
+
+    return 0;
+}
